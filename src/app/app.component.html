@@ -1,0 +1,53 @@
+
+<div class="container">
+	<div class="add-new">
+		<div class="add-new-button" *ngIf="!addingContact" (click)="toggleAddingContact()">
+			<p>+</p>
+			<p>ADD CONTACT</p>
+		</div>
+		<form [formGroup]="newContactForm" (ngSubmit)="addContact()" *ngIf="addingContact">
+			<label for="name">Name</label>
+			<input type="text" formControlName="name">
+			<label for="email">Email</label>
+			<input type="email" formControlName="email">
+			<label for="phone">Phone Number</label>
+			<input type="text" formControlName="phone">
+			<div class="buttons">
+				<button (click)="cancelAddContact()">Cancel</button>
+				<button type="submit">Add New Contact</button>
+			</div>
+		</form>
+	</div>
+	<div class="contacts">
+		<div class="list">
+			<ul>
+				<li class="contact" *ngFor="let contact of contacts | async">
+					<div class="info">
+						<p class="name">{{contact.name}}</p>
+						<p class="email">{{contact.email}}</p>
+						<p class="phone">{{contact.phone}}</p>
+					</div>
+					<div class="buttons">
+						<button class="update" (click)="toggleUpdate(contact)">{{contact.isEditing ? 'Cancel' : 'Update'}}</button>
+						<button class="remove" (click)="removeContact(contact.$key)">Remove</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="update">
+			<form class="edit-contact" [formGroup]="updateContactForm" (ngSubmit)="submitEditedContact()" *ngIf="updatingContact">
+				<p>EDIT CONTACT</p>
+				<label for="name">Name</label>
+				<input type="text" formControlName="name">
+				<label for="email">Email</label>
+				<input type="email" formControlName="email">
+				<label for="phone">Phone Number</label>
+				<input type="text" formControlName="phone">
+				<div class="buttons">
+					<button (click)="cancelEdit()">Cancel</button>
+					<button type="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,157 @@
+.container {
+	background-color: #fcfcfc;
+	display: grid;
+	grid-template-rows: 300px auto;
+}
+
+.add-new-button,
+.add-new form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+form label {
+	font-size: 14px;
+}
+
+form input {
+	border: 2px solid #ccc;
+	width: 300px;
+	height: 30px;
+	background-color: transparent;
+	margin-bottom: 20px;
+}
+
+form button {
+	width: 120px;
+	padding: 5px 0;
+	border: none;
+	color: white;
+	text-transform: uppercase;
+}
+
+form button:first-child {
+	background-color: #7d0000;
+}
+
+form button:last-child {
+	background-color: #11a27a;
+}
+
+.add-new {
+	border-bottom: 2px solid #cecece;
+}
+
+.add-new-button {
+	cursor: pointer;
+}
+
+.add-new-button:hover {
+	background-color: #f0f0f0;
+}
+
+.add-new-button:active {
+	background-color: #e8e8e8;
+}
+
+.add-new p {
+	text-align: center;
+	color: #11a27a;
+	font-weight: bold;
+	margin: 0;
+}
+
+.add-new p:first-child {
+	font-size: 50px;
+}
+
+.contacts {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.list li,
+.list li .info,
+.list li .buttons {
+	display: flex;
+}
+
+.list li {
+	border: 1px solid #ccc;
+	height: 100px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.list li:not(:last-child) {
+	border-bottom: none;
+}
+
+.list li .buttons,
+.list li .info {
+	justify-content: center;
+	align-items: center;
+}
+
+.list li .info {
+	flex-direction: column;
+	padding: 8px;
+	align-items: flex-start;
+}
+
+li p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+li .name {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+li .phone,
+li .email {
+	font-size: 18px;
+}
+
+.list li .buttons {
+	height: 100px;
+}
+
+.list li .buttons button {
+	flex: 1;
+	border: none;
+	outline: none;
+	width: 100px;
+	color: white;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 10px;
+}
+
+.list li .buttons .update {
+	background-color: #11a27a;
+	
+}
+
+.list li .buttons .remove {
+	background-color: #7d0000;
+}
+
+.update {
+	padding: 8px;
+	text-align: center;
+}
+
+.edit-contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
